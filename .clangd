@@ -1,0 +1,8 @@
+CompileFlags:
+  Add:
+    - -Iinclude
+    - -I/home/dashcom/antigravity/mini-redis/include
+    - -std=c11
+    - -Wall
+    - -Wextra
+    - -Wpedantic
