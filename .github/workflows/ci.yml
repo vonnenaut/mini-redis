@@ -1,0 +1,32 @@
+name: C/C++ CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-sanitizers:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: [gcc, clang]
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Install Build Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential valgrind
+
+    - name: Build & Run Test Suite with Sanitizers (${{ matrix.compiler }})
+      run: |
+        make clean
+        make test CC=${{ matrix.compiler }}
+
+    - name: Valgrind Memory Leak Validation
+      run: |
+        valgrind --leak-check=full --error-exitcode=1 ./build/test_kv_string
