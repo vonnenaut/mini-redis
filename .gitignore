@@ -1,21 +1,21 @@
-# Build directories and binaries                              
-    build/                                                        
-    bin/                                                          
-    *.o                                                           
-    *.out                                                         
-    *.a                                                           
-    *.so                                                          
-    *.dSYM/                                                       
-                                                                  
-    # CMake cache and generated files                             
-    CMakeFiles/                                                   
-    CMakeCache.txt                                                
-    cmake_install.cmake                                           
-    Makefile.cmake                                                
-    compile_commands.json                                         
-                                                                  
-    # OS and Editor artifacts                                     
-    .DS_Store                                                     
-    *.swp                                                         
-    *~                                                            
-    .vscode/
+# Build directories and binaries
+build/
+bin/
+*.o
+*.out
+*.a
+*.so
+*.dSYM/
+
+# CMake cache and generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile.cmake
+compile_commands.json
+
+# OS and Editor artifacts
+.DS_Store
+*.swp
+*~
+.vscode/
